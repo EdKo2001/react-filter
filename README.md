@@ -1,3 +1,4 @@
+
 ## Stack
 
 - React
@@ -10,6 +11,8 @@
 
 Implemented the existed library https://ukrbublik.github.io/react-awesome-query-builder/
 However, in your project it is more user friendly, as long as **Groups** are interchangeable.
+
+**[Demo](https://codesandbox.io/s/clever-boyd-70t8c7)**
 
 ## In the project directory, you can run:
 
