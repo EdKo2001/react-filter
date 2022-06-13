@@ -1,0 +1,12 @@
+.instant-alert {
+  position: fixed;
+  top: 15vh;
+  right: -100vw;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  z-index: 999;
+  &.active {
+    right: 0;
+    opacity: 1;
+  }
+}

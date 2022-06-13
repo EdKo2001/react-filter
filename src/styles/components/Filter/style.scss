@@ -1,0 +1,288 @@
+.filter {
+  &-rows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  &-row {
+    flex-wrap: nowrap;
+    width: 100%;
+    &.active {
+      margin-bottom: 16px;
+      .filter-content {
+        padding: 16px 23px;
+        background: rgba(203, 212, 225, 0.2);
+        border: 1px solid rgba(224, 229, 237, 0.5);
+        border-radius: 2px;
+        .filter-add {
+          display: block;
+          margin-top: -8px;
+        }
+      }
+      .filter-where {
+        &.parent {
+          line-height: 65px;
+        }
+      }
+      .filter-drag {
+        margin-top: 27px;
+      }
+      .filter-group {
+        display: flex;
+        align-items: center;
+        &.parent {
+          margin-top: 20px;
+          margin-right: -1px;
+        }
+      }
+    }
+  }
+  .filter-inputs {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: 100%;
+  }
+  .filter-content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    width: min-content;
+    .filter-add {
+      display: none;
+    }
+    .filter-group {
+      width: 70px;
+      padding-right: 29px;
+      margin-right: 0;
+      &.ant-select-open {
+        padding-right: 16px;
+        margin-right: 23px;
+        margin-left: -23px;
+      }
+    }
+  }
+  &-input {
+    width: 116px;
+    background: #ffffff;
+    border: 1px solid #e0e5ed;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #8c8c8c;
+      opacity: 1; /* Firefox */
+    }
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #8c8c8c;
+    }
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #8c8c8c;
+    }
+    &:nth-child(4) {
+      width: 136px;
+    }
+    .ant-select-selector {
+      border-color: transparent !important;
+      .ant-select-selection-placeholder {
+        color: #8c8c8c;
+      }
+    }
+  }
+  &-modal {
+    position: absolute;
+    right: -240px;
+    top: -150px;
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    max-width: 258px;
+    padding: 10px 15px;
+    box-shadow: 0px 9px 28px 8px rgb(0 0 0 / 5%), 0px 6px 16px rgb(0 0 0 / 8%),
+      0px 3px 6px -4px rgb(0 0 0 / 12%);
+    border-radius: 2px;
+    z-index: 99;
+    background: white;
+    button {
+      position: relative;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      border: none;
+      padding: 8px 0;
+      cursor: pointer;
+      &:not(:last-of-type) {
+        margin-bottom: 7px;
+      }
+      &:hover {
+        &::before {
+          display: block;
+        }
+      }
+      &::before {
+        content: "";
+        display: none;
+        position: absolute;
+        left: -15px;
+        right: -15px;
+        top: 0;
+        height: 100%;
+        background: rgba(#f0faff, 0.6);
+      }
+      &:disabled {
+        cursor: not-allowed;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: -15px;
+          right: -15px;
+          top: 0;
+          height: 100%;
+          background: rgba(gray, 0.15);
+        }
+      }
+      span {
+        position: relative;
+        z-index: 9;
+      }
+      .anticon,
+      img {
+        width: 15px;
+        margin-right: 23px;
+      }
+    }
+    &-button {
+      position: relative;
+      margin: 0 8px 0 4px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  &-save {
+    background: #1890ff;
+    border: 1px solid transparent !important;
+    border-radius: 2px;
+    color: white;
+    padding: 5px 19.5px;
+    cursor: pointer;
+    float: right;
+    margin-left: 15px;
+    &:hover {
+      background: transparent;
+      border: 1px solid #1890ff !important;
+      color: #1890ff;
+    }
+  }
+  &-clear {
+    border: 1px solid #1890ff;
+    background: transparent;
+    border-radius: 2px;
+    padding: 5px 19.5px;
+    cursor: pointer;
+    float: right;
+    &:hover {
+      background: #1890ff;
+      border: 1px solid transparent;
+      color: white;
+    }
+  }
+  &-add {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    .anticon {
+      margin-right: 15px;
+    }
+  }
+  &-delete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &-where {
+    color: #515156;
+    margin-right: 26px;
+    margin-bottom: 0;
+    &.parent {
+      margin-right: 37px;
+      line-height: 32px;
+    }
+  }
+  &-drag {
+    width: 15px;
+    height: 15px;
+    margin-right: 12px;
+  }
+  &-group {
+    color: #515156;
+    width: 80px;
+    height: fit-content;
+    padding-right: 39px;
+    margin-right: -11px;
+    text-align: right;
+    .ant-select-item-option-content {
+      font-size: 6px !important;
+    }
+    &.parent.ant-select-open {
+      margin-right: 25px !important;
+      &.or {
+        margin-right: 17px !important;
+      }
+    }
+    &.ant-select-open {
+      background: #ffffff;
+      border: 1px solid #1890ff;
+      border-radius: 2px;
+      margin-right: 15px;
+      margin-left: -26px;
+      padding-right: 24px;
+      &.or {
+        margin-right: 7px;
+        margin-left: -18px;
+        padding-right: 22px;
+      }
+      .ant-select-selection-item {
+        color: #1890ff;
+        padding-right: 13px !important;
+      }
+      .ant-select-arrow {
+        display: block;
+        color: #1890ff;
+        padding-right: 8px;
+        font-weight: bold;
+        font-size: 10px;
+        top: 52%;
+      }
+    }
+    .ant-select-selector,
+    .ant-select-selection-item {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      transition: none !important;
+    }
+    .ant-select-arrow {
+      display: none;
+    }
+  }
+  &-break {
+    flex-basis: 100%;
+    height: 0;
+  }
+  .error {
+    border-color: #ff4d4f;
+  }
+  .ant-form-item-explain-error {
+    display: none;
+  }
+}

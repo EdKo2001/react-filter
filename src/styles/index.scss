@@ -1,0 +1,14 @@
+//Ant Design Styles
+@import "../../node_modules/antd/dist/antd.css";
+//Components Styles
+@import "./components/index.scss";
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter {
+  width: min-content;
+}
