@@ -1,4 +1,4 @@
-<h1 align="center">REACT BUILDER</h1>
+<h1 align="center">REACT FILTER</h1>
 
 <p align="center">
     <img align="center" src="https://user-images.githubusercontent.com/53624093/207134978-b2e9f89f-59ca-41dd-88b3-d25dae8c10f5.gif">
